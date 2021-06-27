@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TupuAppComponent } from './tupu-app.component';
+import { WelcomeComponent } from './shared/welcome.component';
 
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    TupuAppComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [TupuAppComponent]
 })
 export class AppModule { }
