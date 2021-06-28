@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'tupu-app',
   template: `
-    <app-welcome></app-welcome>
+    <tupu-top-nav></tupu-top-nav>
+    <router-outlet></router-outlet>
     `,
 })
 export class TupuAppComponent {
