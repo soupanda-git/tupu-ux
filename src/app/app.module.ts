@@ -10,10 +10,12 @@ import { StakeholderListComponent } from './stakeholders/stakeholder-list.compon
 import { appRouts } from './routs';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRouts)
+    RouterModule.forRoot(appRouts, {enableTracing:true})
   ],
   declarations: [
     TupuAppComponent,
