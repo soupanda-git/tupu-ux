@@ -6,13 +6,16 @@ import { StakeholderListComponent } from "./stakeholders/stakeholder-list.compon
 import { StakeholderComponent } from "./stakeholders/stakeholder.component";
 
 export const appRouts: Routes = [
-  {path: 'projects', component:ProjectListComponent },
-  {path: 'projects/:id', component:ProjectComponent },
   {path: 'welcome', component: WelcomeComponent },
   {path: '', redirectTo: '/welcome', pathMatch: 'full' },
   {
     path: 'stakeholder',
     loadChildren: () => import("./stakeholders/stakeholder.module")
     .then(s => s.StakeholderModule)
+  },
+  {
+    path: 'project',
+    loadChildren: () => import("./projects/project.module")
+    .then(s => s.ProjectModule)
   }
 ]
