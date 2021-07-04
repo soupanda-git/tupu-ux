@@ -13,15 +13,22 @@ import { ProjectContainerComponent } from './projects/project-container.componen
 import { ProjectModule } from './projects/project.module';
 import { SharedModule } from './shared/shared.module';
 import { StakeholderModule } from './stakeholders/stakeholder.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRouts, {enableTracing:true}),
+    RouterModule.forRoot(appRouts, {enableTracing:false}),
     ProjectModule,
-    StakeholderModule
+    StakeholderModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([])
   ],
   declarations: [
     TupuAppComponent

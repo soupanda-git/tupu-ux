@@ -7,7 +7,6 @@ import { StakeholderComponent } from "./stakeholders/stakeholder.component";
 
 export const appRouts: Routes = [
   {path: 'welcome', component: WelcomeComponent },
-  {path: '', redirectTo: '/welcome', pathMatch: 'full' },
   {
     path: 'stakeholder',
     loadChildren: () => import("./stakeholders/stakeholder.module")
@@ -17,5 +16,6 @@ export const appRouts: Routes = [
     path: 'project',
     loadChildren: () => import("./projects/project.module")
     .then(s => s.ProjectModule)
-  }
+  },
+  {path: '', redirectTo: 'welcome', pathMatch: 'full' },
 ]

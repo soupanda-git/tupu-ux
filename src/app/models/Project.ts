@@ -1,7 +1,7 @@
 export class Project {
   projectName: string;
   startDate?: Date;
-  Id?: string;
+  id?: string;
 
   constructor(){
     this.projectName="";
